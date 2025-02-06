@@ -15,6 +15,13 @@ class DisplayResult
   end
 
   begin
+    rate = CurrencyExchange.rate(Date.new(2018, 11, 22), "EUR", "EUR")
+    puts "EUR to USD on 2018-11-22: #{rate}"
+  rescue => e
+    puts "Error: #{e.message}"
+  end
+
+  begin
     rate = CurrencyExchange.rate(Date.new(2018, 11, 22), "GBP", "USD")
     puts "GBP to USD on 2018-11-22: #{rate}"
   rescue => e
